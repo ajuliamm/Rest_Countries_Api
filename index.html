@@ -17,82 +17,63 @@
             <h1> Where in the world?</h1>
             <button id="button-dark-mode" onclick="darkMode()"> <img src="./assets/moon-outline.svg"> Dark Mode</button>
         </div>
-        <div id="header-second-div"> 
-            <input type="text" placeholder="Search for a country...">
-            <nav>
-                <ul id="filter" >
-                    <li id="filter-li"><a id="filter-a" onclick="openFilter()">Filter by Region <img src=".//assets/chevron-down-outline.svg"></a>
-                        <ul id="submenu-filter">
-                            <li><a href="#">Africa</a></li>
-                            <li><a href="#">America</a></li>
-                            <li><a href="#">Asia</a></li>
-                            <li><a href="#">Europe</a></li>
-                            <li><a href="#">Oceania</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            
-        </div>
 
     </header>
-    <main>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
-        <div>
-            <img src="./assets/illustration-of-german-flag-vector.jpg">
-            <h2>Germany</h2>
-            <p><b>Population: </b>323.947.000</p>
-            <p><b>Region: </b>Americas</p>
-            <p><b>Capital: </b>Washington, D.C.</p>
-        </div>
+    <main  >
+        <section id="input-and-filter">
+                <input 
+                onkeyup="input()" 
+                type="text" 
+                id="country-inp"
+                placeholder="Search for a country...">
+                <button 
+                onclick="searchBtn()"
+                id="search-btn">Search</button>
+                <nav>
+                    <ul id="filter" >
+                        <li id="filter-li"><a id="filter-a" onclick="openFilter()">Filter by Region <img src=".//assets/chevron-down-outline.svg"></a>
+                            <ul id="submenu-filter">
+                                <li><a href="#">Africa</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">Asia</a></li>
+                                <li><a href="#">Europe</a></li>
+                                <li><a href="#">Oceania</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </section>
+
+        <section id="result"> </section>
+
+        <section id="section-country-details"> 
+            <button id="back-button"><img src="./assets/arrow-back-outline.svg" >Back</button>
+            <div>
+                <img src="./assets/illustration-of-german-flag-vector.jpg">
+                <div >
+                    <h1>Belgium</h1>
+                    <div id="info-country-details">
+                        <p><b>Native Name:</b>Belgie</p>
+                        <p><b>Population:</b>  Belgie</p>
+                        <p><b>Region:</b>  Belgie</p>
+                        <p><b>Sub Region:</b>  Belgie</p>
+                        <p><b>Capital:</b>  Belgie</p>
+                        <p><b>Top Level Domain:</b>  Belgie</p>
+                        <p><b>Currencies:</b>  Belgie</p>
+                        <p><b>Languages:</b>  Belgie</p>
+    
+                    </div>
+                </div>
+            </div>
+    
+    
+        </section>
+        
+
+        
     </main>
+    
 </body>
 </html>

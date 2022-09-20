@@ -23,35 +23,33 @@ const darkMode = () => {
 }
 
 //Requisição API
-function fazGet(url) {
+/*function fazGet(url) {
     let request = new XMLHttpRequest()
     request.open("GET", url, false)
     request.send()
     return request.responseText
-}
+}*/
 
-function main() {
-    const data = fazGet("https://restcountries.com/v3.1/all")
-    let paises = JSON.parse(data)
+async function main() {
+    const data = await fetch("https://restcountries.com/v3.1/all")
+    const response = await data.json()
+    let paises = response
 
-    console.log(paises[0].flags.svg)
-    console.log(paises[0].name.common)
-    console.log(paises[0].population)
-    console.log(paises[0].region)
-    console.log(paises[0].capital[0])
-
-    for(let i = 0; paises.length; i++) {
-        document.getElementById("result").innerHTML = `
-    <div>
-        <img src="${paises[i].flags.svg}">
-        <h2>${paises[i].name.common}</h2>
-        <p><b>Population: </b>${paises[i].population}</p>
-        <p><b>Region: </b>${paises[i].region}</p>
-        <p><b>Capital: </b>${paises[i].capital[0]}</p>
-    </div>
-    `
-    }
-
+   paises.forEach((element, index)=> {
+    let section = document.getElementById('result')
+    let div = document.createElement('div')
+    div.classList.add("div-country")
+    section.appendChild(div)
+    div.innerHTML=
+            ` <img src="${element.flags.png}">
+            <div>
+            <h2>${element.name.common}</h2>
+            <p><b>Population: </b>${element.population}</p>
+            <p><b>Region: </b>${element.region}</p>
+            <p><b>Capital: </b>${element.capital}</p>
+            </div>`
+   })
+   
 }
 
 

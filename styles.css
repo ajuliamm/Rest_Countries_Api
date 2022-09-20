@@ -173,12 +173,21 @@ input::placeholder{
 
 }
 
-#result div{
+.div-country{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     background-color:var(--elements) ;
     width: 255px;
     height: 45vh;
     border-radius: 5px;
     box-shadow: 0px 0px 6px 0px var(--shadow-color);
+}
+.div-country:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+.div-country:active{
+    opacity: 0.5;
 }
 
 h2{
@@ -203,6 +212,7 @@ p{
 }
 #section-country-details{
     padding: 0 6vw;
+    display: none;
 }
 #section-country-details button{
     background-color:var(--elements) ;

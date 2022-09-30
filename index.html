@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js"></script>
     <title>Rest Countries</title>
 </head>
 <body>
@@ -21,14 +20,10 @@
     </header>
     <main  >
         <section id="input-and-filter">
-                <input 
-                onkeyup="input()" 
+                <input  
                 type="text" 
                 id="country-inp"
                 placeholder="Search for a country...">
-                <button 
-                onclick="searchBtn()"
-                id="search-btn">Search</button>
                 <nav>
                     <ul id="filter" >
                         <li id="filter-li"><a id="filter-a" onclick="openFilter()">Filter by Region <img src=".//assets/chevron-down-outline.svg"></a>
@@ -76,4 +71,5 @@
     </main>
     
 </body>
+<script src="./script.js"></script>
 </html>

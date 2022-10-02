@@ -164,7 +164,7 @@ input::placeholder{
 #filter-a.active {
     display: block;
 }
-#result{
+#principal{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -206,7 +206,7 @@ p{
     color: var(--Text);
 }
 
-#result div img{
+#principal div img{
     width: 100%;
     border-radius: 5px 5px 0 0;
 }

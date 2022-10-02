@@ -30,7 +30,7 @@ async function main() {
     let paises = response
 
     paises.forEach((element, index) => {
-        let section = document.getElementById('result')
+        let section = document.getElementById('principal')
         let div = document.createElement('div')
         div.classList.add("div-country")
         section.appendChild(div)
@@ -45,41 +45,11 @@ async function main() {
     })
 
 }
-main()
-
-
+document.querySelector('html').addEventListener('load', main())
 
 //Pesquisar país 
 let countryInp = document.getElementById('country-inp')
 
-const searchBtn = () => {
-    let countryInp = document.getElementById('country-inp')
-    let countryName = countryInp.value
-    let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
-    console.log(finalURL)
-    fetch(finalURL)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data[0])
-            console.log(data[0].capital[0])
-            console.log(data[0].flags.svg)
-            console.log(data[0].name.common)
-            console.log(data[0].continents[0])
-            console.log(data[0].population)
-            console.log(data[0].region)
-
-            let result = document.getElementById('result')
-            result.innerHTML = `
-                                <div>
-                                    <img src="${data[0].flags.svg}">
-                                    <h2>${data[0].name.common}</h2>
-                                    <p><b>Population: </b>${data[0].population}</p>
-                                    <p><b>Region: </b>${data[0].region}</p>
-                                    <p><b>Capital: </b>${data[0].capital[0]}</p>
-                                </div>
-                                `
-        })
-}
 
 countryInp.addEventListener('keyup', function (e) {
     if (e.keyCode == 13) {
@@ -97,7 +67,7 @@ countryInp.addEventListener('keyup', function (e) {
                 console.log(data[0].population)
                 console.log(data[0].region)
 
-                let result = document.getElementById('result')
+                let result = document.getElementById('principal')
                 result.innerHTML = `
                             <div>
                                 <img src="${data[0].flags.svg}">
@@ -113,7 +83,36 @@ countryInp.addEventListener('keyup', function (e) {
     }
 });
 
+const searchAfrica = document.getElementById('africa')
+
+searchAfrica.addEventListener('click', ()=>{
+    fetch('https://restcountries.com/v3.1/region/africa')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+            data.forEach(element => {
+                let result = document.getElementById('principal')
+                let div =  document.createElement('div')
+                div.classList.add('div-country')
+                result.appendChild(div)
+                div.innerHTML =`
+                <img src="${element.flags.png}">
+                <div>
+                <h2>${element.name.common}</h2>
+                <p><b>Population: </b>${element.population}</p>
+                <p><b>Region: </b>${element.region}</p>
+                <p><b>Capital: </b>${element.capital}</p>
+                </div>      
+                
+                `
+            });
+           
 
 
+    
+
+
+        })
+})
 
 

@@ -84,37 +84,3 @@ countryInp.addEventListener('keyup', function (e) {
 });
 
 
-const searchAfrica = document.getElementById('africa')
-
-searchAfrica.addEventListener('click', ()=>{
-    let result = document.getElementById('principal')
-                result.innerHTML=''
-    fetch('https://restcountries.com/v3.1/region/africa')
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            data.forEach(element => {
-                
-                let div =  document.createElement('div')
-                div.classList.add('div-country')
-                result.appendChild(div)
-                div.innerHTML =`
-                <img src="${element.flags.png}">
-                <div>
-                <h2>${element.name.common}</h2>
-                <p><b>Population: </b>${element.population}</p>
-                <p><b>Region: </b>${element.region}</p>
-                <p><b>Capital: </b>${element.capital}</p>
-                </div>      
-                
-                `
-            });
-           
-
-
-    
-
-
-        })
-})
-

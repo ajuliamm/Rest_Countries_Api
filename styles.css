@@ -167,7 +167,6 @@ input::placeholder{
 #principal{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     padding:  6vw;
     gap:4vh 2vw
 
@@ -210,10 +209,13 @@ p{
     width: 100%;
     border-radius: 5px 5px 0 0;
 }
-#section-country-details{
+.section-country-details{
     padding: 0 6vw;
     height: 70vh;
     display: none;
+}
+.active{
+    display: block;
 }
    
 
@@ -231,7 +233,7 @@ p{
     border-radius: 5px;
     box-shadow: 0px 0px 6px 0px var(--shadow-color);
 }
-#section-country-details button img{
+.section-country-details button img{
     width: 18px;
     color:var(--Text) ;
     
@@ -246,7 +248,7 @@ p{
 .container-info-details-text {
     display: flex;
     flex-direction:column;
-    gap: 15px;
+    gap: 30px;
     padding: 30px 0 80px 0;
     
 
@@ -254,10 +256,17 @@ p{
 #info-country-details{
     
     display: flex;
+
     gap: 10px;
 }
+.info1{
+    width: 50%;
+}
+.info2{
+    width: 50%;
+}
 
-#section-country-details img{
+.section-country-details img{
     width: 600px;
     height: 300px
 }
@@ -272,9 +281,8 @@ p{
 .button-border{
     background-color:var(--elements) ;
     color: var(--Text);
-    border: none;
-    width: 100px;
-    padding: 1vw;
+    border: none;;
+    padding: 0 2vw;
     height: 4vh;
     display: flex;
     align-items: center;

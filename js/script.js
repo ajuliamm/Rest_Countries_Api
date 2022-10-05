@@ -32,6 +32,7 @@ async function main() {
     paises.forEach((element, index) => {
         let section = document.getElementById('principal')
         let div = document.createElement('div')
+        div.id=index
         div.classList.add("div-country")
         section.appendChild(div)
         div.innerHTML =
@@ -69,12 +70,14 @@ countryInp.addEventListener('keyup', function (e) {
 
                 let result = document.getElementById('principal')
                 result.innerHTML = `
-                            <div>
+                            <div class="div-country">
                                 <img src="${data[0].flags.svg}">
+                                <div>
                                 <h2>${data[0].name.common}</h2>
                                 <p><b>Population: </b>${data[0].population}</p>
                                 <p><b>Region: </b>${data[0].region}</p>
                                 <p><b>Capital: </b>${data[0].capital[0]}</p>
+                                </div>
                             </div>
                             `
             })
@@ -82,5 +85,14 @@ countryInp.addEventListener('keyup', function (e) {
 
     }
 });
+
+let Card = document.querySelector('#principal')
+
+Card.addEventListener('click',(e)=> {
+    console.log(e.id)
+}
+    )
+
+
 
 

@@ -168,7 +168,8 @@ input::placeholder{
     display: flex;
     flex-wrap: wrap;
     padding:  6vw;
-    gap:4vh 2vw
+    gap:4vh 2vw;
+    
 
 }
 
@@ -216,6 +217,7 @@ p{
 }
 .active{
     display: block;
+    
 }
    
 

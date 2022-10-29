@@ -30,9 +30,10 @@ async function main() {
     let paises = response
 
     paises.forEach((element, index) => {
+        let detailSection = document.querySelector('.section-country-details')
         let section = document.getElementById('principal')
         let div = document.createElement('div')
-        div.id=index
+        div.id= element.cca2
         div.classList.add("div-country")
         section.appendChild(div)
         div.innerHTML =
@@ -43,6 +44,20 @@ async function main() {
             <p><b>Region: </b>${element.region}</p>
             <p><b>Capital: </b>${element.capital}</p>
             </div>`
+        
+
+            
+            div.addEventListener('click', ()=>{
+                let id = div.id
+                const data = fetch(`https://restcountries.com/v3.1/alpha/${id}`).then(response => response.json())
+                console.log(data)
+
+                section.classList.add('oculto')
+                detailSection.classList.remove('oculto')
+
+
+            })
+            
     })
 
 }

@@ -28,6 +28,7 @@
                     <ul id="filter" >
                         <li id="filter-li"><a id="filter-a" onclick="openFilter()">Filter by Region <img src=".//assets/chevron-down-outline.svg"></a>
                             <ul id="submenu-filter">
+                                <li><a class="submenu__link" id="todos-paises" data-regiao="todos-paises" href="#">Todos os países</a></li>
                                 <li><a class="submenu__link" id="africa" data-regiao="africa" href="#">Africa</a></li>
                                 <li><a class="submenu__link" id="america" data-regiao="america" href="#">America</a></li>
                                 <li><a class="submenu__link" id="asia" data-regiao="asia" href="#">Asia</a></li>
@@ -43,7 +44,7 @@
 
         <section id="principal"> </section>
 
-        <section class="section-country-details active"> 
+        <section class="section-country-details oculto"> 
             <button id="back-button"><img src="./assets/arrow-back-outline.svg" >Back</button>
             <div class="container-info-details">
                 <img src="./assets/illustration-of-german-flag-vector.jpg">
@@ -88,5 +89,6 @@
 </body>
 <script src="./js/script.js"></script>
 <script src="./js/filter.js"></script>
+<script src="./js/details.js"></script>
 
 </html>

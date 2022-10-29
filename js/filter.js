@@ -2,6 +2,14 @@ let filter = document.getElementById('submenu-filter')
 let link = document.querySelectorAll('.submenu__link')
 var dados
 
+const todosPaises = document.getElementById('todos-paises')
+
+todosPaises.addEventListener('click', () =>{
+    let result = document.getElementById('principal')
+    result.innerHTML=''
+    main()
+})
+
 
 const searchAfrica = document.getElementById('africa')
 

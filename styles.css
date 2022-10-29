@@ -215,8 +215,8 @@ p{
     height: 70vh;
     display: none;
 }
-.active{
-    display: block;
+.oculto{
+    display: none;
     
 }
    

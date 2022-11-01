@@ -30,8 +30,10 @@ async function main() {
     let paises = response
 
     paises.forEach((element, index) => {
+        let section = document.querySelector('.principal')
         let detailSection = document.querySelector('.section-country-details')
-        let section = document.getElementById('principal')
+        let inputAndFilter =  document. querySelector('.input-and-filter')
+        let backButton = document.querySelector('#back-button')
         let div = document.createElement('div')
         div.id= element.cca2
         div.classList.add("div-country")
@@ -48,19 +50,31 @@ async function main() {
 
             
             div.addEventListener('click', ()=>{
+
                 let id = div.id
                 const data = fetch(`https://restcountries.com/v3.1/alpha/${id}`).then(response => response.json())
                 console.log(data)
-
+                
+                
                 section.classList.add('oculto')
+                inputAndFilter.classList.add('oculto')
                 detailSection.classList.remove('oculto')
 
 
             })
+            backButton.addEventListener('click', ()=>{
+                section.classList.remove('oculto')
+                inputAndFilter.classList.remove('oculto')
+                detailSection.classList.add('oculto')
+            })
+            
             
     })
 
 }
+
+
+
 document.querySelector('html').addEventListener('load', main())
 
 //Pesquisar país 
@@ -83,7 +97,7 @@ countryInp.addEventListener('keyup', function (e) {
                 console.log(data[0].population)
                 console.log(data[0].region)
 
-                let result = document.getElementById('principal')
+                let result = document.querySelector('.principal')
                 result.innerHTML = `
                             <div class="div-country">
                                 <img src="${data[0].flags.svg}">
@@ -101,7 +115,7 @@ countryInp.addEventListener('keyup', function (e) {
     }
 });
 
-let Card = document.querySelector('#principal')
+let Card = document.querySelector('.principal')
 
 Card.addEventListener('click',(e)=> {
     console.log(e.id)

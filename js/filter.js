@@ -5,7 +5,7 @@ var dados
 const todosPaises = document.getElementById('todos-paises')
 
 todosPaises.addEventListener('click', () =>{
-    let result = document.getElementById('principal')
+    let result = document.querySelector('.principal')
     result.innerHTML=''
     main()
 })
@@ -14,7 +14,7 @@ todosPaises.addEventListener('click', () =>{
 const searchAfrica = document.getElementById('africa')
 
 searchAfrica.addEventListener('click', ()=>{
-    let result = document.getElementById('principal')
+    let result = document.querySelector('.principal')
                 result.innerHTML=''
     fetch('https://restcountries.com/v3.1/region/africa')
         .then((response) => response.json())
@@ -41,7 +41,7 @@ searchAfrica.addEventListener('click', ()=>{
 const searchAmerica = document.getElementById('america')
 
 searchAmerica.addEventListener('click', ()=>{
-    let result = document.getElementById('principal')
+    let result = document.querySelector('.principal')
     result.innerHTML=''
     fetch('https://restcountries.com/v3.1/region/america')
         .then((response) => response.json())
@@ -69,7 +69,7 @@ searchAmerica.addEventListener('click', ()=>{
 const searchAsia = document.getElementById('asia')
 
 searchAsia.addEventListener('click', ()=>{
-    let result = document.getElementById('principal')
+    let result = document.querySelector('.principal')
                 result.innerHTML=''
     fetch('https://restcountries.com/v3.1/region/asia')
         .then((response) => response.json())
@@ -96,7 +96,7 @@ searchAsia.addEventListener('click', ()=>{
 const searchEuropa = document.getElementById('europe')
 
 searchEuropa.addEventListener('click', ()=>{
-    let result = document.getElementById('principal')
+    let result = document.querySelector('.principal')
                 result.innerHTML=''
     fetch('https://restcountries.com/v3.1/region/europe')
         .then((response) => response.json())
@@ -123,7 +123,7 @@ searchEuropa.addEventListener('click', ()=>{
 const searchOceania = document.getElementById('oceania')
 
 searchOceania.addEventListener('click', ()=>{
-    let result = document.getElementById('principal')
+    let result = document.querySelector('.principal')
                 result.innerHTML=''
     fetch('https://restcountries.com/v3.1/region/Oceania')
         .then((response) => response.json())

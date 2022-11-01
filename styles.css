@@ -67,7 +67,7 @@ main {
     display: flex;
     flex-direction: column;
 }
-#input-and-filter{
+.input-and-filter{
     display: flex;
     margin-top: 6vh;
     justify-content: space-between;
@@ -164,7 +164,7 @@ input::placeholder{
 #filter-a.active {
     display: block;
 }
-#principal{
+.principal{
     display: flex;
     flex-wrap: wrap;
     padding:  6vw;
@@ -206,19 +206,20 @@ p{
     color: var(--Text);
 }
 
-#principal div img{
+.principal div img{
     width: 100%;
     border-radius: 5px 5px 0 0;
 }
 .section-country-details{
     padding: 0 6vw;
     height: 70vh;
-    display: none;
+    
 }
 .oculto{
     display: none;
     
 }
+
    
 
 #back-button{

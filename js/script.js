@@ -49,16 +49,54 @@ async function main() {
         
 
             
-            div.addEventListener('click', ()=>{
+            div.addEventListener('click', async()=>{
 
+                const infoDetails = document.querySelector('.container-info-details')
+                
                 let id = div.id
-                const data = fetch(`https://restcountries.com/v3.1/alpha/${id}`).then(response => response.json())
+                const data = await fetch(`https://restcountries.com/v3.1/alpha/${id}`).then(response => response.json())
                 console.log(data)
-                
-                
+
                 section.classList.add('oculto')
                 inputAndFilter.classList.add('oculto')
                 detailSection.classList.remove('oculto')
+
+                infoDetails.innerHTML = ''
+
+                infoDetails.innerHTML = `
+                <img src="${data[0].flags.png}">
+                <div class="container-info-details-text">
+                    <h1>${data[0].name.common}</h1>
+                    <div id="info-country-details">
+                        <div class="info1">
+                        <p><b>Native Name:</b>${data[0].name.nativeName[Object.keys(data[0].name.nativeName)[0]].official}</p>
+                        <p><b>Population:</b>  ${data[0].population}</p>
+                        <p><b>Region:</b>  ${data[0].region}</p>
+                        <p><b>Sub Region:</b>  ${data[0].subregion}</p>
+                        <p><b>Capital:</b>  ${data[0].capital}</p>
+                        </div>
+                        <div class="info2">
+                        <p><b>Top Level Domain:</b>  ${data[0].tld}</p>
+                        <p><b>Currencies:</b>  ${data[0].currencies[Object.keys(data[0].currencies)].name}</p>
+                        <p><b>Languages:</b>  ${data[0].languages[Object.keys(data[0].languages)]}</p>
+                        </div>
+    
+                    </div>
+                    <div class="info__box__border"> 
+                        <h3>Border countries:</h3>
+                        <div class="info__box__button"><button class="button-border">País</button>
+                            <button class="button-border">País</button>
+                            <button class="button-border">País</button>
+                            <button class="button-border">País</button>
+                            <button class="button-border">País</button>
+                            <button class="button-border">País</button></div>
+                    </div>
+                </div>
+                
+                `
+                
+                
+                
 
 
             })

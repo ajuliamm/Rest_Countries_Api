@@ -62,7 +62,10 @@ async function main() {
                 detailSection.classList.remove('oculto')
 
                 infoDetails.innerHTML = ''
-
+                console.log(Object.keys(data[0].languages).map(i =>{
+                    console.log(data[0].languages[i])
+                }))
+                
                 infoDetails.innerHTML = `
                 <img src="${data[0].flags.png}">
                 <div class="container-info-details-text">
@@ -78,7 +81,9 @@ async function main() {
                         <div class="info2">
                         <p><b>Top Level Domain:</b>  ${data[0].tld}</p>
                         <p><b>Currencies:</b>  ${data[0].currencies[Object.keys(data[0].currencies)].name}</p>
-                        <p><b>Languages:</b>  ${data[0].languages[Object.keys(data[0].languages)]}</p>
+                        <p><b>Languages:</b>  ${Object.keys(data[0].languages).forEach(i =>{
+                            data[0].languages[i]})}</p>
+                        
                         </div>
     
                     </div>

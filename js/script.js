@@ -63,8 +63,9 @@ async function main() {
 
                 infoDetails.innerHTML = ''
                 console.log(Object.keys(data[0].languages).map(i =>{
-                    console.log(data[0].languages[i])
+                    return data[0].languages[i]
                 }))
+                console.log(data[0].languages[Object.keys(data[0].languages)])
                 
                 infoDetails.innerHTML = `
                 <img src="${data[0].flags.png}">
@@ -81,20 +82,16 @@ async function main() {
                         <div class="info2">
                         <p><b>Top Level Domain:</b>  ${data[0].tld}</p>
                         <p><b>Currencies:</b>  ${data[0].currencies[Object.keys(data[0].currencies)].name}</p>
-                        <p><b>Languages:</b>  ${Object.keys(data[0].languages).forEach(i =>{
-                            data[0].languages[i]})}</p>
+                        <p><b>Languages:</b>  ${data[0].languages[Object.keys(data[0].languages)]}</p>
                         
                         </div>
     
                     </div>
                     <div class="info__box__border"> 
                         <h3>Border countries:</h3>
-                        <div class="info__box__button"><button class="button-border">País</button>
-                            <button class="button-border">País</button>
-                            <button class="button-border">País</button>
-                            <button class="button-border">País</button>
-                            <button class="button-border">País</button>
-                            <button class="button-border">País</button></div>
+                        <div class="info__box__button">
+                        <button class="button-border">País</button>                         
+                            </div>
                     </div>
                 </div>
                 
